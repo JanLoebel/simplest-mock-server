@@ -18,19 +18,23 @@ Return mock data specified by:
 4.  Configure the routes depending on your needs. Therefore open the `config.js`
 
 ```js
-module.exports = [
-  {
-    path: "/test",
-    query: "a=true&b=false&c=1",
-    responseFile: "./responseFiles/test1.txt",
+module.exports = {
+  server: {
+    port: 3000
   },
-  {
-    path: "/test/2",
-    responseFile: "./responseFiles/test2.json"
-    method: "POST",
-    responseCode: 200
-  }
-];
+  mocks: [
+    {
+      path: "/test",
+      query: "a=true&b=false&c=1",
+      responseFile: "./responseFiles/test1.txt",
+    },
+    {
+      path: "/test/2",
+      responseFile: "./responseFiles/test2.json"
+      method: "POST",
+      responseCode: 200
+    }
+  ];
 ```
 
 ## Configuration options
@@ -56,7 +60,11 @@ module.exports = [
 | `responseFile` | _Optional_ Location for the file to return.<br><br>**Type:** `string`<br>               |
 | `responseCode` | _Optional_ Response-Code to return. <br><br>**Type:** `int` <br>Default: 200            |
 
-### The MIT License (MIT)
+## Contribution
+
+Please feel free to improve or modify the code and send a Pull-Request! Any contribution is very welcome :)
+
+## The MIT License (MIT)
 
 Copyright © 2018 Jan Loebel
 
