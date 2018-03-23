@@ -35,6 +35,7 @@ module.exports = {
       responseCode: 200
     }
   ];
+}
 ```
 
 ## Configuration options
