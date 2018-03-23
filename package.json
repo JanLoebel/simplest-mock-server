@@ -4,7 +4,13 @@
   "description": "Very simple mock server",
   "author": "Jan Löbel <jan.loebel@gmail.com>",
   "license": "MIT",
-  "keywords": ["mock", "server", "simple", "mock server", "simple mock server"],
+  "keywords": [
+    "mock",
+    "server",
+    "simple",
+    "mock server",
+    "simple mock server"
+  ],
   "main": "index.js",
   "repository": {
     "type": "git",
@@ -15,7 +21,10 @@
     "watch": "nodemon server.js"
   },
   "nodemonConfig": {
-    "ignore": [".vscode/*", ".sonarlint/*"]
+    "ignore": [
+      ".vscode/*",
+      ".sonarlint/*"
+    ]
   },
   "dependencies": {
     "cors": "^2.8.4",
