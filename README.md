@@ -38,6 +38,16 @@ module.exports = {
 }
 ```
 
+## Running the tests
+
+Simplest Mock Server comes bundled with a [Postman](https://www.getpostman.com/) Collection containing some tests to verify everything is working.  
+It is run using [Newman](https://www.getpostman.com/docs/postman/collection_runs/command_line_integration_with_newman). These tests are based on the default response files.
+
+Run the tests with:
+```
+npm test
+```
+
 ## Configuration options
 
 | Option   | Description                                                                                        |
