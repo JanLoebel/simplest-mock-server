@@ -18,7 +18,8 @@
   },
   "scripts": {
     "start": "node index.js",
-    "watch": "nodemon server.js"
+    "watch": "nodemon server.js",
+    "test": "node test.js"
   },
   "nodemonConfig": {
     "ignore": [
@@ -31,6 +32,7 @@
     "express": "^4.16.2"
   },
   "devDependencies": {
+    "newman": "^4.1.0",
     "nodemon": "^1.18.4"
   }
 }
