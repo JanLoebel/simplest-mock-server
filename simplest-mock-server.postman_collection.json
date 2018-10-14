@@ -1,0 +1,218 @@
+{
+	"info": {
+		"_postman_id": "c8f41cc3-940c-4f0a-90aa-3e8e33720019",
+		"name": "simplest-mock-server",
+		"description": "Call all test resources",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "test1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "2f7ee549-b623-4178-966d-5390a0fe9e2c",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Body matches response file content\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"abc|def\");",
+							"    pm.expect(pm.response.text()).to.include(\"asdddas|assdas\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:3000/test?a=true&b=false&c=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"test"
+					],
+					"query": [
+						{
+							"key": "a",
+							"value": "true"
+						},
+						{
+							"key": "b",
+							"value": "false"
+						},
+						{
+							"key": "c",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "test2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "904d20df-a013-4d95-9377-b847e5ccf98a",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Body matches response file content\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.test2).to.eql(true);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:3000/test/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"test",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "test3",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8b40a32b-8b34-4727-a534-6c3ee719c46a",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Body matches response file content\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"<html>\");",
+							"    pm.expect(pm.response.text()).to.include(\"Test3!\");",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:3000/test3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"test3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "test4",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "879d3c39-46a9-4a92-a7cc-a8f35414a3ac",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"XML response contains content from response file\", function () {",
+							"    var jsonObject = xml2Json(responseBody);",
+							"    pm.expect(jsonObject.root.test4).to.eql(\"yipphie\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:3000/test4?areYouSure=yes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"test4"
+					],
+					"query": [
+						{
+							"key": "areYouSure",
+							"value": "yes"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "test5",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "abc8edba-5165-496a-8cb4-4b3bd8795606",
+						"exec": [
+							"pm.test(\"Status code is correct\", function () {",
+							"    pm.response.to.have.status(\"Created\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:3000/test5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"test5"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
