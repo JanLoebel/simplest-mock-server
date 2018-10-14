@@ -1,4 +1,5 @@
 # Simplest Mock Server
+[![Build Status](https://travis-ci.org/JanLoebel/simplest-mock-server.svg?branch=master)](https://travis-ci.org/JanLoebel/simplest-mock-server)
 
 This is a very simple mock server. Simplify returning static data on http requests.
 
